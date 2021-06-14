@@ -9,13 +9,29 @@ const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin');
 //自动清除dist 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 module.exports={
    //五大概念
    //入口
    entry:{
+       //公共样式
+    commonCss:'./src/js/commonCss.js',
+        //广告
+    advertisingCss:'./src/js/advertising/advertisingCss.js',
+    advertisingJs:'./src/js/advertising/advertising.js',
+        //注册
+    registerCss:'./src/js/register/registerCss.js',
+    registerJs:'./src/js/register/registerJs.js',
+        //登录
+     pasTopCss:'./src/js/pasTop/pasTopCss.js',
+    pasTopJs:'./src/js/pasTop/pasTop.js',
+
+
+
     index:'./src/page/index.html',
-    login:'./src/page/login.html'
+    login:'./src/page/login.html',
+    advertising:'./src/page/advertising.html',
+    register:'./src/page/register.html',
+    pasTop:'./src/page/pasTop.html'
    },
    //出入
    output:{
@@ -68,19 +84,41 @@ module.exports={
    },
    //plugins 插件
    plugins:[
+            // index
         new HtmlWebpackPlugin({
                 template:'./src/page/index.html'   ,
                 filename:'index.html',
-                chunks:['index'] 
+                chunks:['index','commonCss'] 
              }) ,
-        new HtmlWebpackPlugin({
+             //login
+         new HtmlWebpackPlugin({
                 template:'./src/page/login.html'   ,
                 filename:'login.html',
                 chunks:['login'] 
              }) ,
+             //广告
+        new HtmlWebpackPlugin({
+                template:'./src/page/advertising.html'   ,
+                filename:'advertising.html',
+                chunks:['advertising','commonCss','advertisingCss','advertisingJs'] 
+             }) ,
+             //注册
+        new HtmlWebpackPlugin({
+                template:'./src/page/register.html'   ,
+                filename:'register.html',
+                chunks:['register','commonCss','registerCss','registerJs'] 
+             }) ,
+            //  登录
+             new HtmlWebpackPlugin({
+                template:'./src/page/pasTop.html'   ,
+                filename:'pasTop.html',
+                chunks:['pasTop','commonCss','pasTopCss','pasTopJs'] 
+             }) ,
+
          new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
          }),
+     
          new OptimizeCssAssetsWebpackPlugin(),
          new CleanWebpackPlugin()
    ],
@@ -100,7 +138,7 @@ module.exports={
         port: 8081,  // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'index.html', // 打开的页面
+        openPage: 'pasTop.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
     

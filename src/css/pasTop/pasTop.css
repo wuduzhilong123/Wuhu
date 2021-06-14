@@ -1,0 +1,102 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  height: 44px;
+  background: #F8F8F8 100%;
+  line-height: 44px;
+  color: #101010;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+}
+main {
+  flex: 1;
+  width: 100%;
+  background: #fff;
+  overflow-y: scroll;
+}
+main .bgcolor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../../img/sign-bg.jpg');
+  width: 100%;
+  height: 808px;
+  background-size: 320%;
+  background-position-x: -370px;
+}
+main .bgcolor .ring {
+  margin-top: 20px;
+  margin-left: 75%;
+  color: #fff;
+  margin-bottom: 20px;
+}
+main .bgcolor .pas {
+  margin-top: 5px;
+  width: 80%;
+  height: 50px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+main .bgcolor .pas input {
+  width: 100%;
+  background: #ccc;
+  height: 50px;
+  border-radius: 20px;
+}
+main .bgcolor .pass {
+  margin-top: 5px;
+  width: 80%;
+  height: 50px;
+  margin-bottom: 20px;
+  background: #ccc;
+  border-radius: 20px;
+}
+main .bgcolor .pass input {
+  width: 100%;
+  background: #ccc;
+  height: 50px;
+  border-radius: 20px;
+}
+main .bgcolor .enter {
+  margin-left: -50%;
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+main .bgcolor .confirm {
+  margin-top: 5px;
+  width: 80%;
+  height: 50px;
+  background: palegreen;
+  border-radius: 20px;
+  line-height: 50px;
+  text-align: center;
+}
+main .bgcolor .sr {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  color: #fff;
+  margin-bottom: 300px;
+}
+main .bgcolor .sr .con {
+  margin: auto;
+}
+main .bgcolor .sr .iocntion {
+  width: 100px;
+}
+main .bgcolor .word {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+footer {
+  display: flex;
+  width: 100%;
+  height: 44px;
+}
