@@ -13,26 +13,38 @@ module.exports={
    //五大概念
    //入口
    entry:{
-       //公共样式
+       //公共css样式
     commonCss:'./src/js/commonCss.js',
-        //广告
-    advertisingCss:'./src/js/advertising/advertisingCss.js',
-    advertisingJs:'./src/js/advertising/advertising.js',
-        //注册
-    registerCss:'./src/js/register/registerCss.js',
-    registerJs:'./src/js/register/registerJs.js',
-        //登录
-     pasTopCss:'./src/js/pasTop/pasTopCss.js',
-    pasTopJs:'./src/js/pasTop/pasTop.js',
-
-
-
+       //公共js
+    commonJS:'./src/js/commonJs.js',
+    // 插件
+    CaptchaMini:'./src/lib/captcha/captcha-mini.js',
+    Swiper:'./src/lib/swiper/swiper-bundle.js',
+   
+  
+    // html
     index:'./src/page/index.html',
     login:'./src/page/login.html',
     advertising:'./src/page/advertising.html',
     register:'./src/page/register.html',
-    pasTop:'./src/page/pasTop.html'
-   },
+    pasTop:'./src/page/pasTop.html',
+    home:'./src/page/home.html',
+    personage:'./src/page/personage.html',
+
+        // 首页
+        homeJs:'./src/js/home/home.js',
+        indexJs:'./src/js/index.js',
+        loginJs:'./src/js/login.js',
+        //广告页
+        advertisingJs:'./src/js/advertising/advertising.js',
+        //注册页
+        registerJs:'./src/js/register/registerJs.js',
+        //登录页
+        pasTopJs:'./src/js/pasTop/pasTop.js',
+        // 修改页
+        personageJs:'./src/js/personage/personage.js',
+
+},
    //出入
    output:{
        path:path.resolve(__dirname,'dist'),
@@ -84,37 +96,48 @@ module.exports={
    },
    //plugins 插件
    plugins:[
-            // index
+            // 运动
         new HtmlWebpackPlugin({
                 template:'./src/page/index.html'   ,
                 filename:'index.html',
-                chunks:['index','commonCss'] 
+                chunks:['index','commonCss','indexJs','commonJS',] 
              }) ,
-             //login
+             //我的
          new HtmlWebpackPlugin({
                 template:'./src/page/login.html'   ,
                 filename:'login.html',
-                chunks:['login'] 
+                chunks:['login','commonCss','loginJs','commonJS',] 
              }) ,
              //广告
         new HtmlWebpackPlugin({
                 template:'./src/page/advertising.html'   ,
                 filename:'advertising.html',
-                chunks:['advertising','commonCss','advertisingCss','advertisingJs'] 
+                chunks:['advertising','commonCss','advertisingJs','commonJS'] 
              }) ,
              //注册
         new HtmlWebpackPlugin({
                 template:'./src/page/register.html'   ,
                 filename:'register.html',
-                chunks:['register','commonCss','registerCss','registerJs'] 
+                chunks:['register','commonCss','registerJs','commonJS','CaptchaMini'] 
              }) ,
             //  登录
-             new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin({
                 template:'./src/page/pasTop.html'   ,
                 filename:'pasTop.html',
-                chunks:['pasTop','commonCss','pasTopCss','pasTopJs'] 
+                chunks:['pasTop','commonCss','pasTopJs','commonJS'] 
              }) ,
-
+            //  首页
+        new HtmlWebpackPlugin({
+                template:'./src/page/home.html',
+                filename:'home.html',
+                chunks:['home','commonCss','homeJs','commonJS','Swiper'] 
+             }) ,
+        new HtmlWebpackPlugin({
+                template:'./src/page/personage.html',
+                filename:'personage.html',
+                chunks:['personage','commonCss','personageJs','commonJS'] 
+             }) ,
+             
          new MiniCssExtractPlugin({
             filename: 'css/[name].css' // 输出到css文件夹里
          }),
@@ -138,7 +161,7 @@ module.exports={
         port: 8081,  // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'pasTop.html', // 打开的页面
+        openPage: 'personage.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
     

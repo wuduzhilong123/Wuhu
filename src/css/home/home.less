@@ -1,0 +1,129 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+    width: 100%;
+    background: #fff;
+    overflow-y: scroll;
+    .bgcolor{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background:beige;
+        background-size: cover;
+        background-position:top center;
+        .slideshow{
+            width: 100%;
+            height: 200px;
+            background: #f60;
+            margin-bottom: 20px;
+            .swiper-container {
+                width: 100%;
+                height: 200px;
+           
+        }
+        .swiper-container{
+            --swiper-theme-color: #201e1d;
+    }  
+        }
+        .capsule{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: auto;
+            width: 90%;
+            div{
+                margin-bottom: 20px;
+                border-radius: 15px;
+            }
+            .one{
+                width: 45%;
+                height: 150px;
+                background: #54AFD9 url('../../img/index-card-rank.png')no-repeat;
+                background-size: 78% 65%;
+                background-position: left bottom;
+                .jon{
+                    margin-top: 20px;
+                    margin-left: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .ranking{
+                    margin-top: 60px;
+                    margin-left: 60px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: white;
+                }
+            }
+            .two{
+                width: 50%;
+                height: 150px;
+                background: #9ED9F7 url('../../img/index-card-sum.png')no-repeat;
+                background-size: 65% 70%;
+                background-position: left bottom;
+                .accumulate{
+                    margin-top: 20px;
+                    margin-left: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .punch{
+                    margin-top: 20px;
+                    margin-left: 35%;
+                    width: 100px;
+                    height: 40px;
+                    background: rgba(119, 102, 102, 0);
+                    border: 3px solid black;
+                    border-radius: 20px;
+                    opacity: 1;
+                }
+            }
+            .three{
+                width: 48%;
+                height: 110px;
+                background:url('../../img/index-card-data.png');
+                background-size:cover ;
+                background-position: center;
+            }
+            .four{
+                width: 48%;
+                height: 110px;
+                background:#9DBDE3;
+                .accumulate1{
+                    margin-top: 20px;
+                    margin-left: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .medal{
+                    margin-top: -20px;
+                    margin-left: 60%;
+                    font-weight: bold;
+                    .big{
+                        font-size: 50px;
+                    }
+                }
+            }
+            .five{
+                width: 100%;
+                height: 110px;
+                background:url('../../img/course-img04.jpg');
+                background-size:cover ;
+                background-position: center;
+            }
+            .six{
+                width: 100%;
+                height: 110px;
+                background:url('../../img/course-img02.png');
+                background-size:cover ;
+                background-position: center;
+            }
+        }
+      
+    }
+   
+}
+

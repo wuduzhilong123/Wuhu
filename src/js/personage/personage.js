@@ -1,0 +1,1 @@
+require('../../css/personage/personage.less')
